@@ -37,7 +37,7 @@ const HomeBanner = () => {
         {_id: 11, name : "Top Featured Products"},
     ]
     return (
-        <section className='lg:my-7'>
+        <section className='lg:my-5'>
             <div className='lg:box'>
                 <div className="grid grid-cols-4 gap-5">
                     <div className='hidden lg:block bg-white rounded-md py-2'>
@@ -136,7 +136,7 @@ const HomeBanner = () => {
                                         {
                                             bannerProducts?.map(product => <SwiperSlide key={product._id}>
                                                 
-                                                <div className='flex flex-col py-2 px-1 rounded-md bg-white'>
+                                                <div className='flex min-h-full flex-col py-2 px-1 rounded-md bg-white'>
                                                     <Link className=''><img className='mx-auto' src={product?.image} alt="" /></Link>
                                                     <Link className='text-center'>{product?.title}</Link>
                                                 </div>

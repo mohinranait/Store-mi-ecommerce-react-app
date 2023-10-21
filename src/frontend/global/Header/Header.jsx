@@ -24,7 +24,7 @@ const Header = () => {
             </div>
             <div className="bg-white">
                 <div className="box">
-                    <div className="grid grid-cols-12 items-center py-4">
+                    <div className="grid grid-cols-12 gap-3 items-center py-4">
                         <div className="col-span-3">
                             <Link className="text-3xl font-bold uppercase">Store<span className="text-primary">MI</span></Link>
                         </div>
@@ -43,13 +43,13 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="col-span-3">
-                            <ul className="flex items-center justify-end gap-5">
+                            <ul className="flex items-center justify-end lg:gap-5">
                                 <li>
                                     <a href="#" className="flex items-center gap-2">
                                         <div>
                                             <GoPerson className="text-3xl text-text-color" />
                                         </div>
-                                        <div>
+                                        <div className="hidden lg:block">
                                             <p className="text-xs leading-3 font-medium">Login</p>
                                             <p className="text-base font-semibold text-text-color ">Account</p>
                                         </div>
@@ -83,19 +83,20 @@ const Header = () => {
 
             <div className="bg-white border-t">
                 <div className="box">
-                    <div className="grid grid-cols-4 items-center gap-5">
+                    <div className="grid grid-cols-4 items-center ">
                         <div className="flex items-center cursor-pointer  gap-2  py-3 relative group">
                             <span className="all-cat-hover"></span>
-                            <span className="absolute right-0 h-[50%] w-[1px] bg-slate-200"></span>
+                           
                             <span className=""><LuMenu className="text-xl" /></span>
                             <span className="text-sm text-text-color font-semibold">Browse All Categories</span>
                         </div>
-                        <div className="col-span-2">
-                            <ul className="lg:flex items-center gap-5">
-                                <li><a href="#" className="link-menu py-3 px-1">Home</a></li>
-                                <li><a href="#" className="link-menu py-3 px-1">pages</a></li>
-                                <li><a href="#" className="link-menu py-3 px-1">About</a></li>
-                                <li><a href="#" className="link-menu py-3 px-1">Contact</a></li>
+                        <div className="col-span-2 relative flex items-center">
+                            <span className="absolute left-0 h-[50%] w-[1px] bg-slate-200"></span>
+                            <ul className="lg:flex items-center pl-3 gap-5">
+                                <li><a href="#" className="link-menu py-2 px-1">Home</a></li>
+                                <li><a href="#" className="link-menu py-2 px-1">pages</a></li>
+                                <li><a href="#" className="link-menu py-2 px-1">About</a></li>
+                                <li><a href="#" className="link-menu py-2 px-1">Contact</a></li>
                             </ul>
                         </div>
                         <div className="">

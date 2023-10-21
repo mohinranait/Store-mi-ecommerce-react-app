@@ -9,7 +9,7 @@ const myRoutes = createBrowserRouter([
         path : "/",
         element : <MainLayout />,
         children : [
-            { path : "/", element : <Home /> },
+            { path : "/", element : <Home />, loader : async () => await fetch("https://assignment-10-server-theta-ivory.vercel.app/products") },
             { path : "/login", element : <Login /> },
             { path : "/register", element : <Register /> },
         ]

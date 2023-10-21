@@ -1,0 +1,122 @@
+import { Link } from "react-router-dom";
+import { IoCallOutline, IoHeartSharp, IoPersonSharp } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { LuMenu, LuShoppingCart } from "react-icons/lu";
+import { GoPerson } from "react-icons/go";
+
+const Header = () => {
+    return (
+        <header>
+            <div className='border-b bg-white'>
+                <div className='box'>
+                    <div className='flex items-center h-[45px]  justify-between'>
+                        <ul className='text-xs'>
+                            <li className='flex items-center gap-1'> <IoCallOutline /> <span> Call us:  <a href="tel:1-888-345-6789" className='font-semibold'>1-888-345-6789</a> </span></li>
+                        </ul>
+                        <ul className='flex items-center justify-end gap-3 text-xs divide-x '>
+                            <li className=''><a href="#" className='flex items-center gap-1'><IoPersonSharp className='text-sm' /> My Account</a></li>
+                            <li className=' pl-3'><a href="#" className='flex items-center gap-1'><IoHeartSharp className='text-sm' /> Wishlist</a></li>
+                            <li className=' pl-3'><a href="#" className='flex items-center gap-1'>USD</a></li>
+                            <li className=' pl-3'><a href="#" className='flex items-center gap-1'>BD</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className="bg-white">
+                <div className="box">
+                    <div className="grid grid-cols-12 items-center py-4">
+                        <div className="col-span-3">
+                            <Link className="text-3xl font-bold uppercase">Store<span className="text-primary">MI</span></Link>
+                        </div>
+                        <div className="col-span-6">
+                            <div className="flex rounded-md ">
+                                <div className="border-2  py-2 border-r-0 w-full border-[#3E5E8EC] rounded-md rounded-r-none flex ">
+                                    <select name="" className="w-[290px] px-3 outline-none " id="">
+                                        <option value="">Category</option>
+                                        <option value="">Apple</option>
+                                        <option value="">Samsung</option>
+                                        <option value="">Mens</option>
+                                    </select>
+                                    <input type="search" className="w-full border-l ml-2 rounded-md outline-none px-3 " placeholder="Search products..." />
+                                </div>
+                                <button className="px-8 bg-primary rounded-r-md text-white text-sm font-semibold">Search</button>
+                            </div>
+                        </div>
+                        <div className="col-span-3">
+                            <ul className="flex items-center justify-end gap-5">
+                                <li>
+                                    <a href="#" className="flex items-center gap-2">
+                                        <div>
+                                            <GoPerson className="text-3xl text-text-color" />
+                                        </div>
+                                        <div>
+                                            <p className="text-xs leading-3 font-medium">Login</p>
+                                            <p className="text-base font-semibold text-text-color ">Account</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="flex items-center gap-2">
+                                        <div className="relative">
+                                            <IoMdHeartEmpty className="text-3xl text-text-color" />
+                                            <span className="select-count">2</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="flex items-center pl-2 gap-4">
+                                        <div className="relative">
+                                            <LuShoppingCart className="text-3xl text-text-color" />
+                                            <span className="select-count">2</span>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs leading-3 font-medium">Your Cart</p>
+                                            <p className="text-base font-semibold text-text-color ">$0.00</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="bg-white border-t">
+                <div className="box">
+                    <div className="grid grid-cols-4 items-center gap-5">
+                        <div className="flex items-center cursor-pointer  gap-2  py-3 relative group">
+                            <span className="all-cat-hover"></span>
+                            <span className="absolute right-0 h-[50%] w-[1px] bg-slate-200"></span>
+                            <span className=""><LuMenu className="text-xl" /></span>
+                            <span className="text-sm text-text-color font-semibold">Browse All Categories</span>
+                        </div>
+                        <div className="col-span-2">
+                            <ul className="lg:flex items-center gap-5">
+                                <li><a href="#" className="link-menu">Home</a></li>
+                                <li><a href="#" className="link-menu">pages</a></li>
+                                <li><a href="#" className="link-menu">About</a></li>
+                                <li><a href="#" className="link-menu">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div className="">
+                            <p>
+                                <Link className="flex gap-3 justify-end"> 
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.08737 14.2867L1.48898 12.6883C0.837006 12.0363 0.837006 10.9637 1.48898 10.3117L3.08737 8.71331C3.36078 8.4399 3.58161 7.90359 3.58161 7.52502V5.26411C3.58161 4.33872 4.33875 3.58161 5.26414 3.58161H7.52502C7.90359 3.58161 8.4399 3.36081 8.71331 3.0874L10.3117 1.48898C10.9637 0.837006 12.0363 0.837006 12.6883 1.48898L14.2867 3.0874C14.5601 3.36081 15.0964 3.58161 15.4749 3.58161H17.7359C18.6612 3.58161 19.4184 4.33872 19.4184 5.26411V7.52502C19.4184 7.90359 19.6392 8.4399 19.9126 8.71331L21.511 10.3117C22.163 10.9637 22.163 12.0363 21.511 12.6883L19.9126 14.2867C19.6392 14.5601 19.4184 15.0964 19.4184 15.475V17.7358C19.4184 18.6612 18.6612 19.4184 17.7359 19.4184H15.4749C15.0964 19.4184 14.5601 19.6392 14.2867 19.9126L12.6883 21.511C12.0363 22.163 10.9637 22.163 10.3117 21.511L8.71331 19.9126C8.4399 19.6392 7.90359 19.4184 7.52502 19.4184H5.26414C4.33875 19.4184 3.58161 18.6612 3.58161 17.7358V15.475C3.58161 15.0859 3.36078 14.5496 3.08737 14.2867Z" fill="#DD3842"></path>
+                                        <path d="M3.08737 14.2867L1.48898 12.6883C0.837006 12.0363 0.837006 10.9637 1.48898 10.3117L3.08737 8.71331C3.36078 8.4399 3.58161 7.90359 3.58161 7.52502V5.26411C3.58161 4.33872 4.33875 3.58161 5.26414 3.58161H7.52502C7.90359 3.58161 8.4399 3.36081 8.71331 3.0874L10.3117 1.48898C10.9637 0.837006 12.0363 0.837006 12.6883 1.48898L14.2867 3.0874C14.5601 3.36081 15.0964 3.58161 15.4749 3.58161H17.7359C18.6612 3.58161 19.4184 4.33872 19.4184 5.26411V7.52502C19.4184 7.90359 19.6392 8.4399 19.9126 8.71331L21.511 10.3117C22.163 10.9637 22.163 12.0363 21.511 12.6883L19.9126 14.2867C19.6392 14.5601 19.4184 15.0964 19.4184 15.475V17.7358C19.4184 18.6612 18.6612 19.4184 17.7359 19.4184H15.4749C15.0964 19.4184 14.5601 19.6392 14.2867 19.9126L12.6883 21.511C12.0363 22.163 10.9637 22.163 10.3117 21.511L8.71331 19.9126C8.4399 19.6392 7.90359 19.4184 7.52502 19.4184H5.26414C4.33875 19.4184 3.58161 18.6612 3.58161 17.7358V15.475C3.58161 15.0859 3.36078 14.5496 3.08737 14.2867Z" fill="#DD3842" stroke="#DD3842" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M8 15.0909L15.0909 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M14.4937 14.5H14.5043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M8.58442 8.59091H8.59503" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg> 
+                                    <span className="font-semibold text-text-color text-sm"> Sale $20 Off Your First Order.</span>
+                                </Link>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    );
+};
+
+export default Header;

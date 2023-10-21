@@ -6,13 +6,16 @@ export default {
   ],
   theme: {
     extend: {
+      container : {
+        center : true,
+      },
       fontFamily : {
         primary : ['Bai Jamjuree', 'sans-serif'],
       },
       colors : {
         primary : "#2B38D1",
         secondary : "#DD3842",
-        'text-color' : "##212529",
+        'text-color' : "#212529",
         "mute" : "#999999",
       }
     },

@@ -3,3 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .box {
+    @apply px-2 lg:px-5 2xl:container 
+  }
+  .select-count {
+    @apply w-5 h-5 flex items-center justify-center bg-secondary rounded-full text-xs font-bold text-white absolute -top-2 -right-2
+  }
+  .all-cat-hover{
+    @apply absolute top-0 left-2/4 -translate-x-2/4 right-0 h-[1px] w-[0px] group-hover:w-full transition-all duration-500 bg-primary
+  }
+  .link-menu{
+    @apply block w-full font-medium text-text-color hover:text-primary transition-all duration-100
+  }
+}

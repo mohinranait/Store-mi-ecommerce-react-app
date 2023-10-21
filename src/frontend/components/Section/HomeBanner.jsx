@@ -37,8 +37,8 @@ const HomeBanner = () => {
         {_id: 11, name : "Top Featured Products"},
     ]
     return (
-        <section className='my-7'>
-            <div className='box'>
+        <section className='lg:my-7'>
+            <div className='lg:box'>
                 <div className="grid grid-cols-4 gap-5">
                     <div className='hidden lg:block bg-white rounded-md py-2'>
                         <div>
@@ -73,8 +73,9 @@ const HomeBanner = () => {
                                     
                                 </Swiper>
                             </div>
-                            <div className='order-3 md:order-2 bg-white col-span-3 md:col-span-1 flex items-center overflow-hidden ' >
-                                <div className='relative group'>
+
+                            <div className='px-3 lg:px-0 order-3 md:order-2 md:bg-white col-span-3 md:col-span-1 flex items-center overflow-hidden ' >
+                                <div className='relative group w-full'>
                                     <div className='absolute w-full h-full flex items-center  pl-6 top-2/4 left-0 -translate-y-2/4'>
                                         <div className='relative '>
                                             <p className='text-xl z-30 text-text-color mb-1 font-semibold'>Over-Ear headphone</p>
@@ -82,12 +83,12 @@ const HomeBanner = () => {
                                             <div><Link className='text-primary text-sm font-semibold'>Details new</Link></div>
                                         </div>
                                     </div>
-                                    <img className='' src="https://demo-uminex.myshopify.com/cdn/shop/files/3_1.jpg?v=1681466981&width=1500" alt="" />
+                                    <img className='w-full' src="https://demo-uminex.myshopify.com/cdn/shop/files/3_1.jpg?v=1681466981&width=1500" alt="" />
                                 </div>
                             </div>
                          
-                            <div className='order-3 md:order-2 bg-white col-span-3 md:col-span-1 flex items-center ' >
-                                <div className='relative group'>
+                            <div className='px-3 lg:px-0 order-3 md:order-2 md:bg-white col-span-3 md:col-span-1 flex items-center ' >
+                                <div className='relative group w-full'>
                                     <div className='absolute w-full h-full flex items-center  pl-6 top-2/4 left-0 -translate-y-2/4'>
                                         <div className='relative '>
                                             <p className='text-xl z-30 text-text-color mb-1 font-semibold'>AirPods</p>
@@ -95,11 +96,11 @@ const HomeBanner = () => {
                                             <div><Link className='text-primary text-sm font-semibold'>Details new</Link></div>
                                         </div>
                                     </div>
-                                    <img className='' src="https://demo-uminex.myshopify.com/cdn/shop/files/3_2.jpg?v=1681466999&width=1500" alt="" />
+                                    <img className='w-full' src="https://demo-uminex.myshopify.com/cdn/shop/files/3_2.jpg?v=1681466999&width=1500" alt="" />
                                 </div>
                             </div>
                          
-                            <div className='order-2 md:order-4  col-span-3 md:col-span-2'>
+                            <div className='px-3  md:pl-3 md:pr-0 lg:px-0 order-2 md:order-4  col-span-3 md:col-span-2'>
                                 <Swiper
                                         spaceBetween={10}
                                         navigation={true}
@@ -143,8 +144,8 @@ const HomeBanner = () => {
                                         }
                                 </Swiper>
                             </div>
-                            <div className=' order-3 md:order-5 bg-white col-span-3 md:col-span-1 flex items-center'>
-                                <div className='relative group'>
+                            <div className='px-3 lg:px-0 order-3 md:order-5 md:bg-white col-span-3 md:col-span-1 flex items-center'>
+                                <div className='relative group w-full'>
                                     <div className='absolute w-full h-full flex items-center  pl-6 top-2/4 left-0 -translate-y-2/4'>
                                         <div className='relative '>
                                             <p className='text-xl z-30 text-text-color mb-1 font-semibold'>Gamepad</p>
@@ -152,7 +153,7 @@ const HomeBanner = () => {
                                             <div><Link className='text-primary text-sm font-semibold'>Details new</Link></div>
                                         </div>
                                     </div>
-                                    <img className='' src="https://demo-uminex.myshopify.com/cdn/shop/files/3_3.jpg?v=1681467017&width=1500" alt="" />
+                                    <img className='w-full' src="https://demo-uminex.myshopify.com/cdn/shop/files/3_3.jpg?v=1681467017&width=1500" alt="" />
                                 </div>
                             </div>
                         </div>

@@ -6,7 +6,7 @@ import { GoPerson } from "react-icons/go";
 
 const Header = () => {
     return (
-        <header>
+        <header className="hidden lg:block">
             <div className='border-b bg-white'>
                 <div className='box'>
                     <div className='flex items-center h-[45px]  justify-between'>
@@ -92,10 +92,10 @@ const Header = () => {
                         </div>
                         <div className="col-span-2">
                             <ul className="lg:flex items-center gap-5">
-                                <li><a href="#" className="link-menu">Home</a></li>
-                                <li><a href="#" className="link-menu">pages</a></li>
-                                <li><a href="#" className="link-menu">About</a></li>
-                                <li><a href="#" className="link-menu">Contact</a></li>
+                                <li><a href="#" className="link-menu py-3 px-1">Home</a></li>
+                                <li><a href="#" className="link-menu py-3 px-1">pages</a></li>
+                                <li><a href="#" className="link-menu py-3 px-1">About</a></li>
+                                <li><a href="#" className="link-menu py-3 px-1">Contact</a></li>
                             </ul>
                         </div>
                         <div className="">

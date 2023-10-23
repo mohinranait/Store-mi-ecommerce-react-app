@@ -1,11 +1,11 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ProductRating from '../../global/ProductRating';
 import { LuPlusSquare } from 'react-icons/lu';
 
 const ProductCard = ({product}) => {
-    const {_id, image, price, title} = product || {};
-    console.log(product);
+    const { image, price, title} = product || {};
+
     return (
         <>
 
@@ -30,8 +30,8 @@ const ProductCard = ({product}) => {
                    
                 </div>
                 <div className='px-4 flex justify-between items-center'>
-                    <div ><span className='text-primary font-bold text-lg'>$120</span> <del className='text-xs text-gray-400'>$150</del> </div>
-                    <button className='py-2   rounded-3xl'> <LuPlusSquare className='text-2xl' /> </button>
+                    <div ><span className='text-primary font-bold text-lg'>${price}.00</span> <del className='text-xs text-gray-400'>$150</del> </div>
+                    <button className='py-2 rounded-3xl text-gray-700'> <LuPlusSquare className='text-2xl' /> </button>
                 </div>
                 
             </div>
@@ -68,5 +68,10 @@ const ProductCard = ({product}) => {
         </>
     );
 };
+
+
+ProductCard.propTypes = {
+    product : PropTypes.object.isRequired,
+}
 
 export default ProductCard;

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -100,7 +100,7 @@ const HomeBanner = () => {
                                 </div>
                             </div>
                          
-                            <div className='px-3  md:pl-3 md:pr-0 lg:px-0 order-2 md:order-4  col-span-3 md:col-span-2'>
+                            <div className='px-3 lg:bg-white md:pl-3 md:pr-0 lg:px-0 order-2 md:order-4  col-span-3 md:col-span-2'>
                                 <Swiper
                                         spaceBetween={10}
                                         navigation={true}

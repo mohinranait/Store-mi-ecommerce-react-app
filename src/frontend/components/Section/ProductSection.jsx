@@ -4,7 +4,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
-import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
 
 const ProductSection = ({products}) => {

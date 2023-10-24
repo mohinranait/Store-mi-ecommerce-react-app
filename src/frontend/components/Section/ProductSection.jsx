@@ -26,28 +26,28 @@ const ProductSection = ({products}) => {
                         navigation={true} 
                         breakpoints={{
                             500: {
-                            slidesPerView: 2,
-                            spaceBetween: 10,
+                                slidesPerView: 2,
+                                spaceBetween: 10,
                             },
                             540: {
-                            slidesPerView: 2,
-                            spaceBetween: 10,
+                                slidesPerView: 2,
+                                spaceBetween: 10,
                             },
                             640: {
-                            slidesPerView: 2,
-                            spaceBetween: 10,
+                                slidesPerView: 2,
+                                spaceBetween: 10,
                             },
                             768: {
-                            slidesPerView: 3,
-                            spaceBetween: 10,
+                                slidesPerView: 3,
+                                spaceBetween: 10,
                             },
                             1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 10,
+                                slidesPerView: 4,
+                                spaceBetween: 10,
                             },
                             1100: {
-                            slidesPerView: 4,
-                            spaceBetween: 10,
+                                slidesPerView: 4,
+                                spaceBetween: 10,
                             },
                             1200: {
                                 slidesPerView: 5,
@@ -62,9 +62,6 @@ const ProductSection = ({products}) => {
                                 <ProductCard product={product} />
                             </SwiperSlide>  )
                         }
-                      
-                       
-                        
                     </Swiper>
                 </div>
             </div>

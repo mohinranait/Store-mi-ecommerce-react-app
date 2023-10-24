@@ -17,7 +17,7 @@ const ProductGallary = () => {
         <>
             
                             <div className=''>
-                                <img src={sliderImage || 'https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/ideapad-slim-3i/ideapad-slim-3i-0010-500x500.jpg'} alt="" />
+                                <img className='mx-auto' src={sliderImage || 'https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/ideapad-slim-3i/ideapad-slim-3i-0010-500x500.jpg'} alt="" />
                             </div>
                             <div className='my-2'>
                                 <Swiper
@@ -26,7 +26,7 @@ const ProductGallary = () => {
                                     navigation={true}
                                     breakpoints={{
                                         640: {
-                                          slidesPerView: 4,
+                                          slidesPerView: 5,
                                           spaceBetween: 10,
                                         },
                                         768: {

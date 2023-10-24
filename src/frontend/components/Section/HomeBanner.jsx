@@ -109,25 +109,29 @@ const HomeBanner = () => {
                                         slidesPerView: 5,
                                         }}
                                         breakpoints={{
+                                            300: {
+                                                slidesPerView: 2,
+                                                spaceBetween: 10,
+                                            },
                                             400: {
-                                            slidesPerView: 3,
-                                            spaceBetween: 10,
+                                                slidesPerView: 3,
+                                                spaceBetween: 10,
                                             },
                                             540: {
-                                            slidesPerView: 4,
-                                            spaceBetween: 10,
+                                                slidesPerView: 4,
+                                                spaceBetween: 10,
                                             },
                                             640: {
-                                            slidesPerView: 5,
-                                            spaceBetween: 10,
+                                                slidesPerView: 5,
+                                                spaceBetween: 10,
                                             },
                                             768: {
-                                            slidesPerView: 4,
-                                            spaceBetween: 10,
+                                                slidesPerView: 4,
+                                                spaceBetween: 10,
                                             },
                                             1024: {
-                                            slidesPerView: 5,
-                                            spaceBetween: 10,
+                                                slidesPerView: 5,
+                                                spaceBetween: 10,
                                             },
                                         }}
                                         modules={[ Navigation, Pagination]}

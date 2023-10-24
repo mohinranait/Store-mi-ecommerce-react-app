@@ -13,11 +13,13 @@ const ProductSection = ({products}) => {
             <div className="box  relative">
                 <div className='flex justify-between bg-white px-4 items-center py-3 mb-3 border-b-2 border-gray-100 '>
                     <div className='text-lg font-semibold text-text-color '><span className='text-primary'>Features</span> Products</div>
-                    <ul className='flex items-center gap-4'>
-                        <li><a href="#" className='text-base text-primary font-semibold '>Top Sell</a></li>
-                        <li><a href="#" className='text-base text-text-color font-semibold'>Feature</a></li>
-                        <li><a href="#" className='text-base text-text-color font-semibold'>Active</a></li>
-                    </ul>
+                    <div className="relative">
+                        <ul className='flex items-center gap-4'>
+                            <li><a href="#" className='text-base text-primary font-semibold '>Top Sell</a></li>
+                            <li><a href="#" className='text-base text-text-color font-semibold'>Feature</a></li>
+                            <li><a href="#" className='text-base text-text-color font-semibold'>Active</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div className=''>
                     <Swiper

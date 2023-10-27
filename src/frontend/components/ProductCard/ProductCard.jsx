@@ -12,7 +12,7 @@ const ProductCard = ({product}) => {
 
             <div className='rounded-md group bg-white  min-h-[350px] flex flex-col pb-2 '>
                 <div className='block  p-1   pb-7'>
-                    <Link  >
+                    <Link to={'/products'} >
                         <img src={image} className='h-44 mx-auto' alt="" />
                     </Link>
                 
@@ -20,7 +20,7 @@ const ProductCard = ({product}) => {
                 <div className=' flex-grow bg-opacity-80  transition-all duration-500'>
                     <div className=' px-3 '>
                         {/* <p className=' pt-4 text-sm text-gray-500 hover:text-gray-700 flex justify-between items-center'><Link  >Apple</Link>  </p> */}
-                        <p className=' '><Link className='text-sx font-medium text-text-color'>{title}</Link></p>
+                        <p className=' '><Link to={'/products'} className='text-sx font-medium text-text-color'>{title}</Link></p>
                         <div className=' flex items-center gap-2'>
                             <ProductRating rating={3}  /> <span className='text-xs text-gray-500'>(3 Reviews)</span>
                         </div>

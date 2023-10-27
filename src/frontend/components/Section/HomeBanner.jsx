@@ -44,7 +44,7 @@ const HomeBanner = () => {
                         <div>
                             <ul className=''>
                                 {
-                                    categoris?.map(category =>  <li key={category._id} className='px-5 group '><a href="#" className='text-sm group-last:border-b-0 border-b font-medium  text-text-color border-[#E5E8EC]  flex items-center leading-[40px]'>{category.name}</a></li> )
+                                    categoris?.map(category =>  <li key={category._id} className='px-5 group '><Link to={'/shops'} className='text-sm group-last:border-b-0 border-b font-medium  text-text-color border-[#E5E8EC]  flex items-center leading-[40px]'>{category.name}</Link></li> )
                                 }
                             
                             </ul>

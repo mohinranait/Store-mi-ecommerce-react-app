@@ -1,7 +1,7 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const HomeSliderItem = ({slider}) => {
-    const {_id, title,sTitle,subTitle}  = slider || {};
+    const { title,sTitle,subTitle,image}  = slider || {};
     return (
         <>
             <div className='py-10 lg:py-0'>
@@ -14,11 +14,15 @@ const HomeSliderItem = ({slider}) => {
                         </div>
                         <div className='mt-4'><a href="#" className='px-7 py-3 inline-block bg-primary text-white font-semibold text-sm rounded-3xl'>Shop Now</a></div>
                     </div>
-                    <img className=' lg:h-[340px]' src="https://demo-uminex.myshopify.com/cdn/shop/files/banner_3_3.jpg?v=1681465977&width=1500" alt="" />
+                    <img className=' lg:h-[340px] object-cover' src={image} alt="" />
                 </div>
             </div>   
         </>
     );
 };
+
+HomeSliderItem.propTypes = {
+    slider : PropTypes.object.isRequired,
+}
 
 export default HomeSliderItem;

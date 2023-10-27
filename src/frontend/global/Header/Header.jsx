@@ -64,7 +64,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="flex items-center pl-2 gap-4">
+                                    <Link to={'/carts'} className="flex items-center pl-2 gap-4">
                                         <div className="relative">
                                             <LuShoppingCart className="text-3xl text-text-color" />
                                             <span className="select-count">2</span>
@@ -73,7 +73,7 @@ const Header = () => {
                                             <p className="text-xs leading-3 font-medium">Your Cart</p>
                                             <p className="text-base font-semibold text-text-color ">$0.00</p>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

@@ -1,9 +1,25 @@
-import { IoCloseSharp } from "react-icons/io5";
+
 import { Link } from "react-router-dom";
 import CartItems from "../../components/CartItems/CartItems";
+import { useState } from "react";
 
 
 const Carts = () => {
+    const myCarts = [
+        {_id: 1, name: "Camera mobile", img:'https://demo-uminex.myshopify.com/cdn/shop/files/col_3_3.png?v=1681548716&width=1500', quantity:1,color:'Red'},
+        {_id: 2, name: "Game controllers", img:'https://demo-uminex.myshopify.com/cdn/shop/files/col_3_4.png?v=1681548715&width=1500', quantity:2,color:'White'},
+        {_id: 3, name: "Table ipads", img:'https://demo-uminex.myshopify.com/cdn/shop/files/col_3_5.png?v=1681548716&width=1500', quantity:1,color:'Blue'},
+    ]
+
+    const [carts , setCarts] = useState(myCarts);
+
+    const handleCartDeletes = (id) => {
+        if(id) {
+            const filter = carts?.filter(cart => cart?._id !== id );
+            setCarts(filter)
+        }
+    }
+
     return (
         <>
             <section className="my-4">
@@ -11,10 +27,21 @@ const Carts = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-5">
                         <div className="md:col-span-1 lg:col-span-2 bg-white py-7">
                             <div className="lg:px-5">
-                                <CartItems />
-                                <CartItems />
-                                <CartItems />
+                                {
+                                    carts?.map(cart => <CartItems key={cart?._id} cart={cart} handleCartDeletes={handleCartDeletes} />)
+                                }
                             </div>
+                            {
+                                carts?.length == 0 && <div className="flex h-full items-center justify-center">
+                                    <div>
+                                        <p className="text-center text-xl text-secondary font-semibold mb-2">Product not found in your shopping cart</p>
+                                        <p className="text-center font-medium text-gray-500">Continue Shopping <Link to={'/'} className="text-primary">Click</Link></p>
+                                        <div>
+                                            <img className="max-w-[200px] mx-auto" src="https://cdni.iconscout.com/illustration/premium/thumb/girl-with-email-trash-9573397-7826327.png" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
                         <div className="">
                             <div className="bg-white shadow px-5 pb-5 pt-7">

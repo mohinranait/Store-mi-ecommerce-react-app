@@ -1,13 +1,16 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { IoChevronBack, IoChevronForwardOutline } from 'react-icons/io5';
+import { OnclickContext } from '../../Providers/OnclickProvider';
 
 const Shops = () => {
-    const products = useLoaderData();
-    const [selectBox, setSelectBox] = useState(false);
-    const [showItem, setShowItem] = useState(false);
+    const {showItem,setShowItem,selectBox,setSelectBox} = useContext(OnclickContext);
+    const getPproducts = useLoaderData();
+    const [products, setProducts] = useState(getPproducts);
+    const [filterProducts, setFilterProducts] = useState(10)
+  
     const [perViews, setPerViews] = useState(10)
     const [selectValues, setSelectValues] = useState('Features')
     const [isLeftFilter, setIsLeftFilter] = useState(false);
@@ -22,10 +25,40 @@ const Shops = () => {
 
     const handlePerViews = (value) => {
         setPerViews(value)
+        setFilterProducts(value);
         setShowItem(false)
     }
 
     const handleFeatures = (value) => {
+        if(value == 'a-z'){
+            const sorts = products?.sort((a,b)=>{
+                if(a.title.toLowerCase() > b.title.toLowerCase()){
+                    return 1
+                }else{
+                    return -1;
+                }
+            })
+            setProducts(sorts)
+        }else if(value === 'z-a'){
+            const sorts = products?.sort((a,b)=>{
+                if(a.title.toLowerCase() > b.title.toLowerCase()){
+                    return 1
+                }else{
+                    return -1;
+                }
+            }).reverse()
+            setProducts(sorts);
+        }else if(value === 'Price top to low'){
+            const sorts = products?.sort((a,b)=>{
+                return a.price - b.price 
+            }).reverse()
+            setProducts(sorts);
+        }else if(value === 'Price low to top'){
+            const sorts = products?.sort((a,b)=>{
+                return a.price - b.price 
+            })
+            setProducts(sorts);
+        }
         setSelectValues(value)
         setSelectBox(false)
     }
@@ -37,19 +70,7 @@ const Shops = () => {
                 <div className="box">
                     <div className='grid lg:grid-cols-4 gap-5 '>
                         <div className={`
-                        bg-white
-                        lg:bg-transparent
-                        w-[80vw] sm:w-[60vw] 
-                        md:w-[30vw] 
-                        z-50  
-                        top-0  bottom-0
-                        
-                        transition-all
-                         lg:static 
-                         lg:w-auto
-                         fixed
-                         shadow
-                         lg:shadow-none
+                        shopLeftFilter
                          ${
                             isLeftFilter ? 'translate-x-0 left-0' : '-translate-x-[calc(100%+8px)] lg:translate-x-0 '
                          }
@@ -117,8 +138,8 @@ const Shops = () => {
                         </div>
                         <div className='col-span-3'>
                             <div>
-                                <div className='flex justify-center md:justify-between gap-3 flex-wrap bg-white px-4 items-center py-3 mb-3 border-b-2 border-gray-100 '>
-                                    <div className='text-lg  font-semibold text-text-color '><span className='text-primary'>Samsung  </span> <span className='text-sm'> - (10) Products</span> </div>
+                                <div className='shop-header '>
+                                    <div className='text-lg font-semibold text-text-color'><span className='text-primary'>Samsung  </span> <span className='text-sm'> - (10) Products</span> </div>
                                     <div className="relative">
                                         
                                         <div className={` flex gap-4 `}>
@@ -127,32 +148,32 @@ const Shops = () => {
                                                 <div className='relative w-[80px]'>
                                                     <span onClick={handleShowItem} className='px-5 text-center py-[5px] cursor-pointer border inline-bolck border-gray-200 inline-block w-full'>{perViews}</span>
                                                     <ul className={`absolute left-0 transition-all  bg-white shadow w-full  overflow-hidden ${showItem ? 'top-full h-[140px]' : 'top-full h-0'}`}>
-                                                        <li onClick={() => handlePerViews(10)} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span className='text-sm block text-center'>10</span></li>
-                                                        <li onClick={() => handlePerViews(20)} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span className='text-sm block text-center'>20</span></li>
-                                                        <li onClick={() => handlePerViews(50)} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span className='text-sm block text-center'>50</span></li>
-                                                        <li onClick={() => handlePerViews(80)} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span className='text-sm block text-center'>80</span></li>
-                                                        <li onClick={() => handlePerViews(100)} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span className='text-sm block text-center'>100</span></li>
+                                                        <li onClick={() => handlePerViews(10)} className='custom-select-box'><span className='text-sm block text-center'>10</span></li>
+                                                        <li onClick={() => handlePerViews(20)} className='custom-select-box'><span className='text-sm block text-center'>20</span></li>
+                                                        <li onClick={() => handlePerViews(50)} className='custom-select-box'><span className='text-sm block text-center'>50</span></li>
+                                                        <li onClick={() => handlePerViews(80)} className='custom-select-box'><span className='text-sm block text-center'>80</span></li>
+                                                        <li onClick={() => handlePerViews(100)} className='custom-select-box'><span className='text-sm block text-center'>100</span></li>
                                                     </ul>
                                                 </div>
                                                 <span className='text-sm'>items</span>
                                             </div>
                                             <div className='relative min-w-[160px]'>
                                                 <span onClick={handleSelectMenu} className='px-5 py-[5px] cursor-pointer border border-gray-200 inline-block w-full'>{selectValues}</span>
-                                                <ul className={`absolute left-0 transition-all  bg-white shadow w-full overflow-hidden ${selectBox ? 'top-full h-[160px]' : 'top-full h-0'}`}>
-                                                    <li onClick={() => handleFeatures('Price top to low')} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span>Price top to low</span></li>
-                                                    <li onClick={() => handleFeatures('Price low top')} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span>Price low to top</span></li>
-                                                    <li onClick={() => handleFeatures('Latest')} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span>Latest</span></li>
-                                                    <li onClick={() => handleFeatures('a-z')} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span>a to z</span></li>
-                                                    <li onClick={() => handleFeatures('z-a')} className='px-5 py-1 cursor-pointer hover:bg-slate-50'><span>z to a</span></li>
+                                                <ul className={`customFilters ${selectBox ? 'top-full h-[160px]' : 'top-full h-0'}`}>
+                                                    <li onClick={() => handleFeatures('Price top to low')} className='custom-select-box'><span>Price top to low</span></li>
+                                                    <li onClick={() => handleFeatures('Price low to top')} className='custom-select-box'><span>Price low to top</span></li>
+                                                    <li onClick={() => handleFeatures('Latest')} className='custom-select-box'><span>Latest</span></li>
+                                                    <li onClick={() => handleFeatures('a-z')} className='custom-select-box'><span>a to z</span></li>
+                                                    <li onClick={() => handleFeatures('z-a')} className='custom-select-box'><span>z to a</span></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className=' grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+                            <div className='shopGrid'>
                                 {
-                                    products?.map(product => <ProductCard key={product?._id} product={product} /> )
+                                    products?.slice(0, filterProducts)?.map(product => <ProductCard key={product?._id} product={product} /> )
                                 }
                             </div>
                         </div>

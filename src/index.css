@@ -36,5 +36,15 @@
     @apply w-14 h-14  bg-primary border-4 border-white shadow-lg rounded-full flex items-center justify-center
   }
   .cartLi {  @apply relative flex items-center justify-center }
-  
+  .shopLeftFilter {
+    @apply bg-white lg:bg-transparent w-[80vw] sm:w-[60vw]  md:w-[30vw] z-50 top-0  bottom-0 transition-all lg:static  lg:w-auto fixed shadow lg:shadow-none
+  }
+  .shop-header { @apply flex justify-center md:justify-between gap-3 flex-wrap bg-white px-4 items-center py-3 mb-3 border-b-2 border-gray-100 }
+  .customFilters { @apply absolute left-0 transition-all  bg-white shadow w-full overflow-hidden }
+  .shopGrid { @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 }
+  .custom-select-box { @apply px-5 py-1 cursor-pointer hover:bg-slate-50 }
+  .cart-right-royar { @apply w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center cursor-pointer   }
+  .btn{ @apply  py-2 font-medium  text-center rounded }
+  .btn-primary { @apply  bg-primary  text-white  }
+  .btn-secondary { @apply  bg-secondary  text-white  }
 }

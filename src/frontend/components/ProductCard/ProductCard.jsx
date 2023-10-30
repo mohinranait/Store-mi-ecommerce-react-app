@@ -22,7 +22,7 @@ const ProductCard = ({product}) => {
                         {/* <p className=' pt-4 text-sm text-gray-500 hover:text-gray-700 flex justify-between items-center'><Link  >Apple</Link>  </p> */}
                         <p className=' '><Link to={'/products'} className='text-sx font-medium text-text-color'>{title}</Link></p>
                         <div className=' flex items-center gap-2'>
-                            <ProductRating rating={3}  /> <span className='text-xs text-gray-500'>(3 Reviews)</span>
+                            <ProductRating rating={'3'}  /> <span className='text-xs text-gray-500'>(3 Reviews)</span>
                         </div>
                       
                         <p className='text-xs '>Stock 5 left product</p>

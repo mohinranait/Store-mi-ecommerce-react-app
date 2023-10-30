@@ -6,12 +6,14 @@ import { HiMiniChevronDown } from "react-icons/hi2";
 // import required modules
 import { Navigation } from 'swiper/modules';
 import ProductCard from '../ProductCard/ProductCard';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { OnclickContext } from "../../Providers/OnclickProvider";
 
 
 
 const ProductSection = ({products}) => {
-    const [isMobileTab, setIsMobileTab] = useState(false);
+    const {isMobileTab,setIsMobileTab} = useContext(OnclickContext)
+
     const [selectCategory, setSelectCategory] = useState('Top Sell')
     const handleCategory = (category) => {
         setSelectCategory(category)

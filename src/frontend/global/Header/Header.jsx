@@ -3,8 +3,9 @@ import { IoCallOutline, IoHeartSharp, IoPersonSharp } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { LuMenu, LuShoppingCart } from "react-icons/lu";
 import { GoPerson } from "react-icons/go";
+import PropTypes from "prop-types"
 
-const Header = () => {
+const Header = ({toggleCartDoyarHandler}) => {
     return (
         <header className="hidden lg:block">
             <div className='border-b bg-white'>
@@ -64,7 +65,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <Link to={'/carts'} className="flex items-center pl-2 gap-4">
+                                    <button onClick={toggleCartDoyarHandler} className="flex items-center pl-2 gap-4">
                                         <div className="relative">
                                             <LuShoppingCart className="text-3xl text-text-color" />
                                             <span className="select-count">2</span>
@@ -73,7 +74,7 @@ const Header = () => {
                                             <p className="text-xs leading-3 font-medium">Your Cart</p>
                                             <p className="text-base font-semibold text-text-color ">$0.00</p>
                                         </div>
-                                    </Link>
+                                    </button>
                                 </li>
                             </ul>
                         </div>
@@ -119,5 +120,9 @@ const Header = () => {
         </header>
     );
 };
+
+Header.propTypes = {
+    toggleCartDoyarHandler: PropTypes.bool.isRequired
+}
 
 export default Header;

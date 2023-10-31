@@ -6,13 +6,13 @@ import PropTypes from "prop-types"
 const RightDoyarCartItems = ({cart}) => {
     const {name, img, quantity} =cart || {};
     const [cartQuantity, setCartQuantity] = useState(quantity);
-    const handleCartIncrement = (e) => {
-        e.stopPropagation();
+    const handleCartIncrement = () => {
+
         setCartQuantity(cartQuantity + 1);
         
     }
-    const handleCartDecrement = (e) => {
-        e.stopPropagation();
+    const handleCartDecrement = () => {
+
         if( cartQuantity > 1 ){
             setCartQuantity(cartQuantity - 1)
         }

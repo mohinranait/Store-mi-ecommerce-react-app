@@ -27,7 +27,7 @@
       @apply fixed bottom-0 border-t border-slate-100 z-[100] left-0 w-full py-1 bg-white
   }
   .mobile-left{
-      @apply w-[70vw] z-50  top-0 left-0 bottom-0 bg-white shadow
+      @apply  w-[90vw] sm:w-[70vw] z-50  top-0 fixed bottom-0 bg-white shadow
   }
   .countMobile{
     @apply absolute top-4 right-2 w-5 h-5 text-xs text-white bg-secondary rounded-full flex items-center justify-center
@@ -47,4 +47,5 @@
   .btn{ @apply  py-2 font-medium  text-center rounded }
   .btn-primary { @apply  bg-primary  text-white  }
   .btn-secondary { @apply  bg-secondary  text-white  }
+  .mobile-logo-wrap { @apply  border-b flex px-5 py-2 items-center justify-between border-gray-200  }
 }

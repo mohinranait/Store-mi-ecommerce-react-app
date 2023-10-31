@@ -42,7 +42,7 @@ const MainLayout = () => {
             <Header toggleCartDoyarHandler={toggleCartDoyarHandler} />
             <Outlet />
             <Footer />
-            <MobileMenu />
+            <MobileMenu toggleCartDoyarHandler={toggleCartDoyarHandler} />
             <MyCartsDoyar toggleCartDoyarHandler={toggleCartDoyarHandler} cartDoyar={cartDoyar} />
         </div>
     );

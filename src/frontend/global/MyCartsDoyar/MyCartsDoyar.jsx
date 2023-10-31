@@ -1,11 +1,12 @@
 import { IoClose } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import RightDoyarCartItems from "../../components/CartItems/RightDoyarCartItems";
 
+
 const MyCartsDoyar = ({toggleCartDoyarHandler,cartDoyar}) => {
     const navigate = useNavigate();
-    const myCarts = [
+    const carts = [
         {_id: 1, name: "Camera mobile", img:'https://demo-uminex.myshopify.com/cdn/shop/files/col_3_3.png?v=1681548716&width=1500', quantity:1,color:'Red'},
         {_id: 2, name: "Game controllers", img:'https://demo-uminex.myshopify.com/cdn/shop/files/col_3_4.png?v=1681548715&width=1500', quantity:2,color:'White'},
         {_id: 3, name: "Table ipads", img:'https://demo-uminex.myshopify.com/cdn/shop/files/col_3_5.png?v=1681548716&width=1500', quantity:1,color:'Blue'},
@@ -13,21 +14,28 @@ const MyCartsDoyar = ({toggleCartDoyarHandler,cartDoyar}) => {
         {_id: 7, name: "Table ipads", img:'https://demo-uminex.myshopify.com/cdn/shop/files/col_3_5.png?v=1681548716&width=1500', quantity:1,color:'Blue'},
     ]
 
+
+
+
+
     const handleRedirectCartPage = () => {
         toggleCartDoyarHandler()
         navigate('/carts');
     }
 
+    const handlePropagration = (e) => {
+        e.stopPropagation()
+    }
 
 
     return (
         <>
-            <div>
-                <div className={`w-[350px] bg-white shadow z-20 top-0  h-screen fixed flex flex-col transition-all duration-500 ${cartDoyar ? "right-0":'-right-[352px]'} `}>
+            <div onClick={handlePropagration} className="">
+                <div className={` w-full sm:w-[350px]  pb-11 lg:pb-0 bg-white shadow z-20 top-0  h-screen fixed flex flex-col transition-all duration-500 ${cartDoyar ? "right-0":'-right-[100vw] sm:-right-[352px]'} `}>
                     <div className='px-4 py-3 border-b '>
                         <div className="flex justify-between items-center">
                             <span onClick={toggleCartDoyarHandler} className="cart-right-royar group"><IoClose className="group-hover:rotate-90 transition-all " /></span>
-                            <span>Carts({myCarts?.length})</span>
+                            <span>Carts({carts?.length})</span>
                         </div>
                     </div>
                     <div className='px-4 flex-grow overflow-y-auto'>
@@ -54,7 +62,7 @@ const MyCartsDoyar = ({toggleCartDoyarHandler,cartDoyar}) => {
                                 </li> )
                             } */}
                             {
-                                myCarts?.map(cart => <RightDoyarCartItems key={cart?._id} cart={cart} /> )}
+                                carts?.map(cart => <RightDoyarCartItems key={cart?._id} cart={cart} /> )}
                         </ul>
                     </div>
                     <div className='px-4'>

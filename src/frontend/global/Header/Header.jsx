@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { IoCallOutline, IoHeartSharp, IoPersonSharp } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { LuMenu, LuShoppingCart } from "react-icons/lu";
@@ -6,6 +6,23 @@ import { GoPerson } from "react-icons/go";
 import PropTypes from "prop-types"
 
 const Header = ({toggleCartDoyarHandler}) => {
+    const location = useLocation();
+    
+    const categoris = [
+        {_id: 1, name : "Computer & Desktop"},
+        {_id: 2, name : "Laptop & Ipad"},
+        {_id: 3, name : "Cameras & Photos"},
+        {_id: 4, name : "Smart Phones & Tablets"},
+        {_id: 5, name : "Home & Kitchen"},
+        {_id: 6, name : "TV & Audios"},
+        {_id: 7, name : "Health & Beauty"},
+        {_id: 8, name : "Watches & Eyewear"},
+        {_id: 9, name : "Top Deals"},
+        {_id: 10, name : "Top Selling Products"},
+        {_id: 11, name : "Top Featured Products"},
+    ]
+
+
     return (
         <header className="hidden lg:block">
             <div className='border-b bg-white'>
@@ -50,7 +67,7 @@ const Header = ({toggleCartDoyarHandler}) => {
                                         <div>
                                             <GoPerson className="text-3xl text-text-color" />
                                         </div>
-                                        <div className="hidden lg:block">
+                                        <div className="hidden xl:block">
                                             <p className="text-xs leading-3 font-medium">Login</p>
                                             <p className="text-base font-semibold text-text-color ">Account</p>
                                         </div>
@@ -85,11 +102,17 @@ const Header = ({toggleCartDoyarHandler}) => {
             <div className="bg-white border-t">
                 <div className="box">
                     <div className="grid grid-cols-4 items-center ">
-                        <div className="flex items-center cursor-pointer  gap-2  py-3 relative group">
+                        <div className="group flex items-center cursor-pointer  gap-2  py-3 relative group">
                             <span className="all-cat-hover"></span>
-                           
                             <span className=""><LuMenu className="text-xl" /></span>
                             <span className="text-sm text-text-color font-semibold">Browse All Categories</span>
+                            <div className={`opacity-0 invisible transition-all duration-500 absolute top-full right-0 z-[99999] left-0 ${location.pathname !='/' && "group-hover:opacity-100 group-hover:visible " } `}>
+                                <ul className="bg-white  w-full  ">
+                                    {
+                                        categoris?.map(category =>  <li key={category._id} className='px-5 group  '><Link to={'/shops'} className='text-sm group-last:border-b-0 border-b font-medium  text-text-color border-[#E5E8EC]  flex items-center leading-[40px]'>{category.name}</Link></li> )
+                                    }
+                                </ul>
+                            </div>
                         </div>
                         <div className="col-span-2 relative flex items-center">
                             <span className="absolute left-0 h-[50%] w-[1px] bg-slate-200"></span>

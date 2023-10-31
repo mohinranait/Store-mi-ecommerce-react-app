@@ -131,7 +131,6 @@ const Shops = () => {
                                                 <span className='ml-1'>Sony</span>
                                             </label>
                                         </li>
-                                       
                                     </ul>
                                 </div>
                             </div>
@@ -139,7 +138,7 @@ const Shops = () => {
                         <div className='col-span-3'>
                             <div>
                                 <div className='shop-header '>
-                                    <div className='text-lg font-semibold text-text-color'><span className='text-primary'>Samsung  </span> <span className='text-sm'> - (10) Products</span> </div>
+                                    <div className='text-lg font-semibold text-text-color'><span className='text-primary'>Samsung  </span> <span className='text-sm'> - ({filterProducts}) Products</span> </div>
                                     <div className="relative">
                                         
                                         <div className={` flex gap-4 `}>

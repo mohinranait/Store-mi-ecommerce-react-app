@@ -4,6 +4,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { LuMenu, LuShoppingCart } from "react-icons/lu";
 import { GoPerson } from "react-icons/go";
 import PropTypes from "prop-types"
+import "./Header.css"
 
 const Header = ({toggleCartDoyarHandler}) => {
     const location = useLocation();
@@ -63,7 +64,7 @@ const Header = ({toggleCartDoyarHandler}) => {
                         <div className="col-span-3">
                             <ul className="flex items-center justify-end lg:gap-5">
                                 <li>
-                                    <a href="#" className="flex items-center gap-2">
+                                    <Link to={'/dashboard'} className="flex items-center gap-2">
                                         <div>
                                             <GoPerson className="text-3xl text-text-color" />
                                         </div>
@@ -71,7 +72,7 @@ const Header = ({toggleCartDoyarHandler}) => {
                                             <p className="text-xs leading-3 font-medium">Login</p>
                                             <p className="text-base font-semibold text-text-color ">Account</p>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="#" className="flex items-center gap-2">
@@ -116,11 +117,11 @@ const Header = ({toggleCartDoyarHandler}) => {
                         </div>
                         <div className="col-span-2 relative flex items-center">
                             <span className="absolute left-0 h-[50%] w-[1px] bg-slate-200"></span>
-                            <ul className="lg:flex items-center pl-3 gap-5">
+                            <ul className="lg:flex items-center pl-3 gap-5 menu">
                                 <li><NavLink to={'/'} className="link-menu py-2 px-1">Home</NavLink></li>
-                                <li><a href="#" className="link-menu py-2 px-1">pages</a></li>
-                                <li><a href="#" className="link-menu py-2 px-1">About</a></li>
-                                <li><a href="#" className="link-menu py-2 px-1">Contact</a></li>
+                                <li><NavLink to={'/carts'} className="link-menu py-2 px-1">Cart</NavLink></li>
+                                <li><NavLink to={'/login'} className="link-menu py-2 px-1">Login</NavLink></li>
+                               
                             </ul>
                         </div>
                         <div className="">

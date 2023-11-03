@@ -57,7 +57,6 @@ const MobileMenu = ({toggleCartDoyarHandler}) => {
                             <li><Link onClick={handleMobileMenuShowup}  className='mobilemenu' >Login</Link></li>
                         </div>
                     }
-                    
                 </ul>
                 <ul>
                     <li></li>
